@@ -2,6 +2,10 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
+app.use(express.text());
+app.use(express.json());
+app.use(express.raw());
+
 const logger = (req, res) => {
   console.log(
     req.params.logGroup ? `[${req.params.logGroup}]` : "[No Log Group]",
